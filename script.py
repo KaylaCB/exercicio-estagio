@@ -34,6 +34,7 @@ if total == 0:
 # ler todos os clientes da tabela
 cursor.execute('SELECT * FROM CLIENTES')
 linhas = cursor.fetchall()
+#fetchal pegar todos os dados e não só primeira linha
 
 colunas = [desc[0] for desc in cursor.description]
 

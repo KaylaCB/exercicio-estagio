@@ -1,27 +1,46 @@
 fetch('clientes.json', { cache: "no-store" })
   .then(resposta => resposta.json())
   .then(clientes => {
-    console.log('Tipo:', typeof clientes);
-    console.log('Conteúdo:', clientes);
-
     if (!Array.isArray(clientes)) {
       console.error('JSON recebido não é um array:', clientes);
       return;
     }
 
     const container = document.querySelector('.card-container');
-    container.innerHTML = '';
+    container.innerHTML = ''; // limpa container
 
-    clientes.forEach(cliente => {
-      const card = document.createElement('div');
-      card.className = 'item';
-      card.innerHTML = `
-        <p><strong>🆔ID:</strong> ${cliente.id}</p>
-        <p><strong>👤Nome:</strong> ${cliente.nome}</p>
-        <p><strong>📧Email:</strong> ${cliente.email}</p>
-        <p><strong>☎️Telefone:</strong> ${cliente.telefone}</p>
-      `;
-      container.appendChild(card);
+    // Cria a tabela
+    const tabela = document.createElement('table');
+    tabela.style.borderCollapse = 'collapse'; // para juntar as bordas
+
+    // Cabeçalho
+    const thead = document.createElement('thead');
+    const trHead = document.createElement('tr');
+    ['ID', 'Nome', 'Email', 'Telefone'].forEach(texto => {
+      const th = document.createElement('th');
+      th.textContent = texto;
+      th.style.border = '1px solid #000';
+      th.style.padding = '8px';
+      trHead.appendChild(th);
     });
+    thead.appendChild(trHead);
+    tabela.appendChild(thead);
+
+    // Corpo da tabela
+    const tbody = document.createElement('tbody');
+    clientes.forEach(cliente => {
+      const tr = document.createElement('tr');
+      [cliente.id, cliente.nome, cliente.email, cliente.telefone].forEach(valor => {
+        const td = document.createElement('td');
+        td.textContent = valor;
+        td.style.border = '1px solid #000';
+        td.style.padding = '8px';
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    tabela.appendChild(tbody);
+
+    container.appendChild(tabela);
   })
   .catch(erro => console.error('Erro ao carregar JSON:', erro));
