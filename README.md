@@ -10,4 +10,3 @@ Para visualizar o site corretamente, siga os passos:
 4. O navegador abrirá automaticamente mostrando o site funcionando!
 
 **Obs** Algumas funcionalidades, como carregar arquivos JSON via `fetch`, só funcionam rodando com o Live Server, não abrindo o arquivo HTML diretamente no navegador.
-Se não usam o VSCode, recomendo usar algum servidor local para rodar, como o Live Server ou outro similar.
