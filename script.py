@@ -24,6 +24,8 @@ if total == 0:
         ('Anna Marinho', 'anna@email.com', '31977776666'),
         ('Carlos Souza', 'carlos@email.com', '41966665555'),
         ('Bia Lima', 'bia@email.com', '51955554444'),
+        ('Nathalia Carvalho', 'nathalia@email.com', '65787773399'),
+        ('Isabela Lira','isabela@email.com','77765388888')
     ]
     cursor.executemany('''
     INSERT INTO CLIENTES (nome, email, telefone)

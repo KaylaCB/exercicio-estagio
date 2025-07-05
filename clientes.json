@@ -25,8 +25,20 @@
     },
     {
         "id": 5,
-        "nome": "Beatriz Lima",
-        "email": "beatriz@email.com",
+        "nome": "Bia Lima",
+        "email": "bia@email.com",
         "telefone": "51955554444"
+    },
+    {
+        "id": 6,
+        "nome": "Nathalia Carvalho",
+        "email": "nathalia@email.com",
+        "telefone": "65787773399"
+    },
+    {
+        "id": 7,
+        "nome": "Isabela Lira",
+        "email": "isabela@email.com",
+        "telefone": "77765388888"
     }
 ]
